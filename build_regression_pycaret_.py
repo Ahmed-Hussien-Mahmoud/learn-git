@@ -82,7 +82,7 @@ def visualize_data(df):
             plt.show()
 visualize_data(df)
 
-! pip install pandas_profiling
+#! pip install pandas_profiling
 
 import pandas_profiling
 profile = df.profile_report(title='Pandas Profiling Report')
@@ -92,7 +92,7 @@ profile
 
 """# pycaret"""
 
-!pip install pycaret
+#!pip install pycaret
 
 x = df.drop(df.columns[-1], axis=1)
 x.head()
@@ -156,28 +156,3 @@ elif clas_or_regr =='c':
 else :
   print("please enter vallid input")
 
-from pycaret.classification import *
-clas_or_regr = input ("enter your methode : c or r ")
-
-if clas_or_regr == 'r':
-  print("setup")
-  s = setup(data, target = 'Class variable', session_id = 123)
-  print("*************************")
-  print("compare models")
-  print("*************************")
-  best = compare_models()
-  print(best)
-  print("*************************")
-  print("analyze model")
-  print("*************************")
-  evaluate_model(best)
-  plot_model(best, plot = 'auc')
-  plot_model(best, plot = 'confusion_matrix')
-  print("*************************")
-  print("predict model")
-  print("*************************")
-  predict_model(best)
-  print("*************************")
-  print("save model")
-  print("*************************")
-  save_model(best, 'my_best_pipeline')

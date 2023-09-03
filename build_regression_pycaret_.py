@@ -8,6 +8,31 @@ Original file is located at
 
 # load data
 """
+import streamlit as st
+
+
+import numpy as np
+import pandas as pd
+
+
+
+st.title('Did they survive? :ship:')
+# PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
+data_path = st.text_input("insert your data here") 
+
+clas_or_regr = st.select_slider("enter your model : classification or regression ", ['c','r'])
+
+
+"""def predict(): 
+    row = np.array([passengerid,pclass,name,sex,age,sibsp,parch,ticket,fare,cabin,embarked]) 
+    X = pd.DataFrame([row], columns = columns)
+    prediction = model.predict(X)
+    if prediction[0] == 1: 
+        st.success('Passenger Survived :thumbsup:')
+    else: 
+        st.error('Passenger did not Survive :thumbsdown:') """
+
+trigger = st.button('done', on_click=done)
 
 import pandas as pd
 import numpy as np
